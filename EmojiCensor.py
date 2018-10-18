@@ -1,5 +1,6 @@
 import discord
 import asyncio
+import EmojiDictionary
 
 
 client = discord.Client()
@@ -19,7 +20,20 @@ async def on_message(message):
         _content = "I'm gay"
     else:
         _content = message.content
-    newmsg=str(_author)+' says: '+str(_content)
+
+
+    new_cont = ""
+    # parse _content
+    cont_words = str(_content).split(" ")
+    # look for words in dictionary and replace them
+    for word in cont_words:
+        emoji = EmojiDictionary.emojiInterpreter(word)
+        if emoji != None:
+            word = emoji
+        new_cont+=word+" "
+
+    # concatenate new message
+    newmsg=str(_author)+' says: '+str(new_cont)
 
     await client.delete_message(message) 
     await client.send_message(message.channel, newmsg)

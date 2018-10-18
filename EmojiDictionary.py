@@ -1,7 +1,8 @@
 d = dict(shit=':poop:',
          fuck=':dolphin:')
 
-def emojientrepreture(switchit):
-    return d[switchit]
-
-print(emojientrepreture('shit'))
+def emojiInterpreter(word):
+    if word in d:
+        return d[word]
+    else:
+        return None
