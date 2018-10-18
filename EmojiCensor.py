@@ -3,17 +3,6 @@ import asyncio
 
 
 client = discord.Client()
-_ALL_CHANNELS = client.get_all_channels
-
-
-for server in client.servers:
-    for channel in server.channels:
-        print(channel)
-
-
-
-
-
 
 @client.event
 async def on_message(message):
