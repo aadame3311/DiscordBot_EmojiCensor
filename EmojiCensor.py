@@ -1,6 +1,7 @@
 import discord
 import asyncio
 import EmojiDictionary
+import re
 
 
 client = discord.Client()
@@ -23,20 +24,25 @@ async def on_message(message):
 
 
     new_cont = ""
+    inappropriate = False
     # parse _content
-    cont_words = str(_content).split(" ")
+    cont_words = re.split('\s|[0-9]', str(_content))
     # look for words in dictionary and replace them
     for word in cont_words:
+        word = re.sub(r'(.)\1+',r'\1', word)
+        print(word)
         emoji = EmojiDictionary.emojiInterpreter(word)
         if emoji != None:
             word = emoji
+            inappropriate = True
         new_cont+=word+" "
 
     # concatenate new message
     newmsg=str(_author)+' says: '+str(new_cont)
 
-    await client.delete_message(message) 
-    await client.send_message(message.channel, newmsg)
+    if inappropriate:
+        await client.delete_message(message) 
+        await client.send_message(message.channel, newmsg)
     ########################################################
 
 
