@@ -1,17 +1,52 @@
 import discord
+import asyncio
 
 
 client = discord.Client()
+_ALL_CHANNELS = client.get_all_channels
+
+
+for server in client.servers:
+    for channel in server.channels:
+        print(channel)
+
+
+
+
+
 
 @client.event
 async def on_message(message):
+
+
     # we don't want bot replying to itself.
     if message.author == client.user:
         return
 
+
+    # Replace inappropriate message with altered message.
+    _author = message.author
+    if str(_author)=='The_Jihad_Spot#1475':
+        _content = "I'm gay"
+    else:
+        _content = message.content
+    newmsg=str(_author)+' says: '+str(_content)
+
+    await client.delete_message(message) 
+    await client.send_message(message.channel, newmsg)
+    ########################################################
+
+
+    # command list
     if message.content.startswith('!hello'):
         msg = 'Hello {0.author.mention}'.format(message)
         await client.send_message(message.channel, msg)
+    
+    if message.content.startswith('!showmsg'):
+        await client.wait_until_ready()
+        async for msg in client.logs_from(cs_general_channel):
+            print(msg)
+
 
 @client.event
 async def on_ready():
