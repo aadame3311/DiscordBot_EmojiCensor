@@ -1,4 +1,5 @@
-d = dict(shit=':poop:', fuck=':dolphin:')
+d = dict(shit=':poop:',
+         fuck=':dolphin:')
 
 def emojientrepreture(switchit):
     return d[switchit]
