@@ -9,8 +9,10 @@ emoji_dict = dict(shit=':poop:',
         fuc=':dolphin:',
         ashole=':peach:',
         bitch=':dog:',
-        niger=':grinning:',
-        fag=':lipstick:'
+        niger=':no_entry_sign:',
+        fag=':no_entry_sign:',
+        dick=':hatched_chick:',
+        pusy=':cat:'
     
          
          

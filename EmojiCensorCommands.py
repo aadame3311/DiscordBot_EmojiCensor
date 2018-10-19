@@ -3,14 +3,8 @@ import discord
 # command list
 async def command(ADMIN, client, message):
     if message.content.startswith('!hello'):
-
         msg = 'Hello {0.author.mention}'.format(message)
         await client.send_message(message.channel, msg)
-
-    elif message.content.startswith('!showmsg'):
-        await client.wait_until_ready()
-        async for msg in client.logs_from(cs_general_channel):
-            print(msg)
 
     elif message.content.startswith('!help'):
         em = discord.Embed(title='Emoji Censor Info', description='EmojiCensor will censor out any inappropriate language with an emoji.', colour=0xDEADBF)
@@ -33,5 +27,5 @@ async def command(ADMIN, client, message):
         # store past 100 messages into the messages list (discord only allows 100 messages to be deleted at a time)
 
         await client.delete_messages(msgs)
-    elif ADMIN == False:
+    elif message.content.startswith('!delete-msg') and ADMIN == False:
         await client.send_message(message.channel, '{0.author.mention} Must be an administrator to use this command'.format(message))
