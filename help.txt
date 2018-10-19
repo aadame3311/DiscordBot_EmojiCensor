@@ -1,0 +1,5 @@
+EmojiCensor will censor out any inappropriate language with an emoji. \n
+list of commands: \n
+
+    !help=displays this message.\n
+    !delete-ALL=deletes all current messages in the channel.\n

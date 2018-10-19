@@ -1,13 +1,24 @@
-d = dict(shit=':poop:',
-         shet=':poop:',  
-         shity=':poop:',
-         fuck=':dolphin:',
-         fucking=':dolphin:',
-         fuk=':dolphin:',
-         fuc=':dolphin:')
+emoji_dict = dict(shit=':poop:',
+        shet=':poop:',  
+        fuck=':dolphin:',
+        fukc=':dolphin:',
+        fack=':dolphin:',
+        fock=':dolphin:',
+        fak=':dolphin:',
+        fuk=':dolphin:',
+        fuc=':dolphin:',
+        ashole=':peach:',
+        bitch=':dog:',
+        niger=':grinning:',
+        fag=':lipstick:'
+    
+         
+         
+         
+         )
 
 def emojiInterpreter(word):
-    if word in d:
-        return d[word]
+    if word in emoji_dict:
+        return emoji_dict[word]
     else:
         return None
