@@ -14,10 +14,6 @@ client = discord.Client()
 #EVENTS.
 @client.event
 async def on_message(message):
-    if message.author == "ChickenBoy956#8947":
-        await client.send_message(message.channel, '{0.message.author} is big gay!'.format(message))
-
-
 
     # some commands can only be run by server admins.
     ADMIN = message.author.server_permissions.administrator
