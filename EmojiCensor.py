@@ -10,8 +10,6 @@ client = discord.Client()
 # some pre set variables.
 
 
-
-
 #EVENTS.
 @client.event
 async def on_message(message):
@@ -74,4 +72,4 @@ async def on_ready():
     print('---------')
 
 # not actual token.
-client.run(token)
+client.run('NTAyMzU2ODcwNTczMzI2MzM3.Dq6Mzg.u1OBSdhDQoi8aIpB7HZs7kMVEwc')
