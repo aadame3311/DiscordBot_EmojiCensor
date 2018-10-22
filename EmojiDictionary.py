@@ -13,6 +13,7 @@ emoji_dict = dict(shit=':poop:',
         fag=':no_entry_sign:',
         dick=':hatched_chick:',
         pusy=':cat:',
+        test = ':test:',
         test = ':test:'
     
          
