@@ -74,4 +74,4 @@ async def on_ready():
     print('---------')
 
 # not actual token.
-client.run('NTAyMzU2ODcwNTczMzI2MzM3.Dq3Qww.z4-t51dEOgYBSOMkaQB1KTj8ubc')
+client.run(token)
