@@ -25,7 +25,6 @@ emoji_dict = dict(shit = ':poop:',
         cock = ':bird:',
         quer = ':no_entry_sign:',
         homo = ':no_entry_sign:',
-        nut = ':no_entry_sign:'
          )
 
 def emojiInterpreter(word):
