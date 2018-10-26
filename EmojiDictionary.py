@@ -14,7 +14,6 @@ emoji_dict = dict(shit=':poop:',
         dick=':hatched_chick:',
         pusy=':cat:',
         test = ':test:',
-        test = ':test:'
     
          
          
